@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compress": "powershell Compress-Archive * output.zip -Force",
-    "upload": "aws lambda update-function-code --function-name db-read-example --zip-file fileb://output.zip",
+    "upload": "aws lambda update-function-code --function-name db-write-example --zip-file fileb://output.zip",
     "deploy": "npm run compress && npm run upload",
-    "lambda:init": "aws lambda create-function --function-name example-function --runtime nodejs --role arn:aws:iam::717982909163:role/lambda-mongodb-role",
-    "lambda:env": "aws lambda update-function-configuration --function-name example-function --environment "
+    "lambda:init": "aws lambda create-function --function-name db-write-example --runtime nodejs --role arn:aws:iam::717982909163:role/lambda-mongodb-role",
+    "lambda:env": "aws lambda update-function-configuration --function-name db-write-example --environment "
   },
   "author": "",
   "license": "ISC",
