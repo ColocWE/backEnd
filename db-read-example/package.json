@@ -1,0 +1,17 @@
+{
+  "name": "lambda-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compress": "powershell Compress-Archive * output.zip -Force",
+    "upload": "aws lambda update-function-code --function-name db-read-example --zip-file fileb://output.zip",
+    "deploy": "npm run compress && npm run upload"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.1.1"
+  }
+}
